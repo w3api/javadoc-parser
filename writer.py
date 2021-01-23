@@ -257,13 +257,14 @@ def doc_elementos(clase,duplicada):
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + elemento.nombre + ".md","w")
             clave = "Java."+clase.nombre[0]+"."+basepath + "." + elemento.nombre
-            path = "Java/"+basepath.replace(".","/") + "/" + elemento.nombre
+            jsonsource = "Java."+clase.nombre[0]+"."+basepath.replace(".","")  # Las base JSON compuestas se accede sin punto
+            path = "/java/"+basepath.replace(".","/") + "/" + elemento.nombre + "/"
             nombre = clase.nombre + "." + elemento.nombre
 
             tags = []
             tags.append("java se")
             tags.append(clase.paquete)  #Paquete creamos espacios en los puntos
-            tags.append(clase.modulo)  #Módulo creamos espacios en los puntos
+            tags.append(clase.modulo)   #Módulo creamos espacios en los puntos
             tags.append("elemento java")
             versiones = clase.version.split(", ")
             for version in versiones:
@@ -272,7 +273,7 @@ def doc_elementos(clase,duplicada):
             cabecera = gen_cabecera(nombre,path,clave,tags)
             f.writelines(cabecera)
 
-            info_elemento = gen_infometodo(clave,"elementos",elemento.nombre)
+            info_elemento = gen_infometodo(jsonsource,"elementos",elemento.nombre)
             f.writelines(info_elemento)
 
             descripcion = gen_descripcion("_dato")
@@ -305,7 +306,8 @@ def doc_campos(clase,duplicada):
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + campo.nombre + ".md","w")
             clave = "Java."+clase.nombre[0]+"."+basepath + "." + campo.nombre
-            path = "Java/"+basepath.replace(".","/") + "/" + campo.nombre
+            path = "/java/"+basepath.replace(".","/") + "/" + campo.nombre + "/"
+            jsonsource = "Java."+clase.nombre[0]+"."+basepath.replace(".","")  # Las base JSON compuestas se accede sin punto
             nombre = clase.nombre + "." + campo.nombre
 
             tags = []
@@ -320,7 +322,7 @@ def doc_campos(clase,duplicada):
             cabecera = gen_cabecera(nombre,path,clave,tags)
             f.writelines(cabecera)
 
-            info_metodo = gen_infometodo(clave,"campos",campo.nombre)
+            info_metodo = gen_infometodo(jsonsource,"campos",campo.nombre)
             f.writelines(info_metodo)
 
             descripcion = gen_descripcion("_dato")
@@ -352,7 +354,8 @@ def doc_enumerados(clase,duplicada):
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + enumerado.nombre + ".md","w")
             clave = "Java."+clase.nombre[0]+"."+basepath + "." + enumerado.nombre
-            path = "Java/"+basepath.replace(".","/") + "/" + enumerado.nombre
+            jsonsource = "Java."+clase.nombre[0]+"."+basepath.replace(".","")  # Las base JSON compuestas se accede sin punto
+            path = "/java/"+basepath.replace(".","/") + "/" + enumerado.nombre + "/"
             nombre = clase.nombre + "." + enumerado.nombre
 
             tags = []
@@ -367,7 +370,7 @@ def doc_enumerados(clase,duplicada):
             cabecera = gen_cabecera(nombre,path,clave,tags)
             f.writelines(cabecera)
 
-            info_metodo = gen_infometodo(clave,"enumeraodos",enumerado.nombre)
+            info_metodo = gen_infometodo(jsonsource,"enumeraodos",enumerado.nombre)
             f.writelines(info_metodo)
 
             descripcion = gen_descripcion("_dato")
@@ -399,7 +402,8 @@ def doc_constructores(clase,duplicada):
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + constructor.nombre + ".md","w")
             clave = "Java."+clase.nombre[0]+"."+basepath + "." + constructor.nombre
-            path = "Java/"+basepath.replace(".","/") + "/" + constructor.nombre.replace(".","/")
+            jsonsource = "Java."+clase.nombre[0]+"."+basepath.replace(".","")  # Las base JSON compuestas se accede sin punto
+            path = "/java/"+basepath.replace(".","/") + "/" + constructor.nombre.replace(".","/") + "/"
             nombre = clase.nombre + "." + constructor.nombre + "()"
 
             tags = []
@@ -415,7 +419,7 @@ def doc_constructores(clase,duplicada):
             cabecera = gen_cabecera(nombre,path,clave,tags)
             f.writelines(cabecera)
 
-            info_metodo = gen_infometodo(clave,"constructores",constructor.nombre)
+            info_metodo = gen_infometodo(jsonsource,"constructores",constructor.nombre)
             f.writelines(info_metodo)
 
             descripcion = gen_descripcion("_dato")
@@ -457,7 +461,8 @@ def doc_metodos(clase,duplicada):
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + metodo.nombre + ".md","w")
             clave = "Java."+clase.nombre[0]+"."+basepath + "." + metodo.nombre
-            path = "Java/"+basepath.replace(".","/") + "/" + metodo.nombre
+            jsonsource = "Java."+clase.nombre[0]+"."+basepath.replace(".","")  # Las base JSON compuestas se accede sin punto
+            path = "/java/"+basepath.replace(".","/") + "/" + metodo.nombre + "/"
             nombre = clase.nombre + "." + metodo.nombre + "()"
 
             tags = []
@@ -473,7 +478,7 @@ def doc_metodos(clase,duplicada):
             cabecera = gen_cabecera(nombre,path,clave,tags)
             f.writelines(cabecera)
 
-            info_metodo = gen_infometodo(clave,"metodos",metodo.nombre)
+            info_metodo = gen_infometodo(jsonsource,"metodos",metodo.nombre)
             f.writelines(info_metodo)
 
             descripcion = gen_descripcion("_dato")
@@ -518,7 +523,8 @@ def doc_clase(clase,duplicada):
 
     f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + ".md","w")
     clave = "Java."+clase.nombre[0]+"."+basepath
-    path = "Java/"+basepath.replace(".","/")
+    jsonsource = "Java."+clase.nombre[0]+"."+basepath.replace(".","")  # Las base JSON compuestas se accede sin punto
+    path = "/java/"+basepath.replace(".","/")+"/"
 
     tags = []
     tags.append("java se")
@@ -532,7 +538,7 @@ def doc_clase(clase,duplicada):
     cabecera = gen_cabecera(clase.nombre,path,clave, tags)
     f.writelines(cabecera)
 
-    descripcion = gen_descripcion("site.data." + clave)
+    descripcion = gen_descripcion("site.data." + jsonsource)
     f.writelines(descripcion)
 
     sintaxis = gen_sintaxis(clase.sintaxis)
@@ -558,10 +564,10 @@ def doc_clase(clase,duplicada):
         metodos = gen_metodos(clase.metodos,basepath)
         f.writelines(metodos)
 
-    ejemplo = gen_ejemplo("site.data." + clave)
+    ejemplo = gen_ejemplo("site.data." + jsonsource)
     f.writelines(ejemplo)
 
-    ldc = gen_ldc("site.data." + clave)
+    ldc = gen_ldc("site.data." + jsonsource)
     f.writelines(ldc)
 
 

@@ -529,7 +529,7 @@ BaseURL = 'https://docs.oracle.com/javase/10/docs/api/'
 
 
 # >> Cuidado con las duplicadas no usarlo
-una_clase("RuntimeOperations")
+una_clase("DataLine.Info")
 
 
 
