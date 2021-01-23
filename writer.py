@@ -117,7 +117,7 @@ def gen_cabecera_tag(tipo, nombre, titulo):
                 "title: \"" + titulo + " " + nombre + "\"\n",
                 "layout: tag\n",
                 "permalink: /java/tag/" + nombre + "/\n",
-                "date: " + str(date.today()) + "\n",
+                "date: " + str(datetime.datetime.now()) + "\n",
                 "key: Java" + tipo + nombre + "\n",
                 "sidebar: " + "\n",
                 "  nav: java" + "\n",
