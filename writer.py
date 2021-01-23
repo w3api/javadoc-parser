@@ -102,7 +102,7 @@ def gen_cabecera(nombre,path,clave,tags):
     c = ["---" + "\n",
                 "title: " + nombre + "\n",
                 "permalink: " + path + "\n",
-                "date: " + str(datetime.datetime.now()) + "\n",
+                "date: " + str(datetime.now()) + "\n",
                 "key: " + clave + "\n",
                 "category: java" + "\n",
                 "tags: " + str(tags) + "\n",
@@ -117,8 +117,8 @@ def gen_cabecera_tag(tipo, nombre, titulo):
                 "title: \"" + titulo + " " + nombre + "\"\n",
                 "layout: tag\n",
                 "permalink: /java/tag/" + nombre + "/\n",
-                "date: " + str(datetime.datetime.now()) + "\n",
-                "key: Java" + tipo + nombre + "\n",
+                "date: " + str(datetime.now()) + "\n",
+                "key: " + tipo + nombre + "\n",
                 "sidebar: " + "\n",
                 "  nav: java" + "\n",
                 "aside: " + "\n",
@@ -256,7 +256,7 @@ def doc_elementos(clase,duplicada):
     for elemento in clase.elementos:
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + elemento.nombre + ".md","w")
-            clave = "Java."+clase.nombre[0]+"."+basepath
+            clave = "Java."+clase.nombre[0]+"."+basepath + "." + elemento.nombre
             path = "Java/"+basepath.replace(".","/") + "/" + elemento.nombre
             nombre = clase.nombre + "." + elemento.nombre
 
@@ -304,7 +304,7 @@ def doc_campos(clase,duplicada):
     for campo in clase.campos:
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + campo.nombre + ".md","w")
-            clave = "Java."+clase.nombre[0]+"."+basepath
+            clave = "Java."+clase.nombre[0]+"."+basepath + "." + campo.nombre
             path = "Java/"+basepath.replace(".","/") + "/" + campo.nombre
             nombre = clase.nombre + "." + campo.nombre
 
@@ -351,7 +351,7 @@ def doc_enumerados(clase,duplicada):
     for enumerado in clase.enumerados:
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + enumerado.nombre + ".md","w")
-            clave = "Java."+clase.nombre[0]+"."+basepath
+            clave = "Java."+clase.nombre[0]+"."+basepath + "." + enumerado.nombre
             path = "Java/"+basepath.replace(".","/") + "/" + enumerado.nombre
             nombre = clase.nombre + "." + enumerado.nombre
 
@@ -398,7 +398,7 @@ def doc_constructores(clase,duplicada):
     for constructor in clase.constructores:
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + constructor.nombre + ".md","w")
-            clave = "Java."+clase.nombre[0]+"."+basepath
+            clave = "Java."+clase.nombre[0]+"."+basepath + "." + constructor.nombre
             path = "Java/"+basepath.replace(".","/") + "/" + constructor.nombre.replace(".","/")
             nombre = clase.nombre + "." + constructor.nombre + "()"
 
@@ -456,7 +456,7 @@ def doc_metodos(clase,duplicada):
     for metodo in clase.metodos:
 
             f = open(__OUT__ + clase.nombre[0] + "/" + basepath + "/2021-01-01-" + clase.nombre + "." + metodo.nombre + ".md","w")
-            clave = "Java."+clase.nombre[0]+"."+basepath
+            clave = "Java."+clase.nombre[0]+"."+basepath + "." + metodo.nombre
             path = "Java/"+basepath.replace(".","/") + "/" + metodo.nombre
             nombre = clase.nombre + "." + metodo.nombre + "()"
 
