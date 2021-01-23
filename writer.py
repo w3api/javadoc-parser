@@ -103,7 +103,7 @@ def gen_cabecera(nombre,path,clave,tags):
                 "title: " + nombre + "\n",
                 "permalink: " + path + "\n",
                 "date: " + str(datetime.datetime.now()) + "\n",
-                "key: Java" + clave + "\n",
+                "key: " + clave + "\n",
                 "category: java" + "\n",
                 "tags: " + str(tags) + "\n",
                 "sidebar: " + "\n",
