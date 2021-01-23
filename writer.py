@@ -140,7 +140,7 @@ def gen_sintaxis(sintaxis):
     return s
 
 def gen_ldc(clave):
-    ldc = ["## Líneas de Código\n",
+    ldc = ["## Artículos\n",
            "<ul>\n",
             "{%- for _ldc in " + clave + ".ldc -%}\n",
             "   <li>\n",
