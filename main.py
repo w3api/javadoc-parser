@@ -34,37 +34,37 @@ def adaptar_version(version):
     # JDK1.2 -> Lo convertimos a Java 1.2
 
     if "1.0" in version:
-        version = version.replace("1.0","Java 1.0")
+        version = version.replace("1.0","java 1.0")
     if "1.1" in version:
-        version = version.replace("1.1","Java 1.1")
+        version = version.replace("1.1","java 1.1")
     if "JSK1.2" in version:
-        version = version.replace("JDK1.2","Java 1.2")
+        version = version.replace("JDK1.2","java 1.2")
     else:
             if "1.2" in version:
-                version = version.replace("1.2","Java 1.2")
+                version = version.replace("1.2","java 1.2")
     if "1.3" in version:
-        version = version.replace("1.3","Java 1.3")
+        version = version.replace("1.3","java 1.3")
     if "1.4" in version:
-        version = version.replace("1.4","Java 1.4")
+        version = version.replace("1.4","java 1.4")
     if "J2SE 1.5" in version:
-        version = version.replace("J2SE 1.5","Java 1.5")
+        version = version.replace("J2SE 1.5","java 1.5")
     else:
         if "1.5" in version:
-            version = version.replace("1.5","Java 1.5")
+            version = version.replace("1.5","java 1.5")
     if "1.6" in version:
-        version = version.replace("1.6","Java 1.6")
+        version = version.replace("1.6","java 1.6")
     if "1.7" in version:
-        version = version.replace("1.7","Java 1.7")
+        version = version.replace("1.7","java 1.7")
     if "1.8u40" in version:
-        version = version.replace("1.8u40","Java 1.8")
+        version = version.replace("1.8u40","java 1.8")
     else:
         if "1.8" in version:
-            version = version.replace("1.8","Java 1.8")
+            version = version.replace("1.8","java 1.8")
     if "9" in version:
-        version = version.replace("9","Java 9")
+        version = version.replace("9","java 9")
 
     if "JavaFX 8u40" in version:
-        version = version.replace("JavaFX 8u40","JavaFX 8.0")
+        version = version.replace("JavaFX 8u40","javafx 8.0")
 
     return version
 
